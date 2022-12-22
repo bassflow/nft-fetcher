@@ -43,3 +43,9 @@ CREATE TABLE IF NOT EXISTS tokentx (
     confirmations,
     PRIMARY KEY (contractaddress, toaddress, timestampint)
 );
+
+CREATE TABLE IF NOT EXISTS nftholdings (
+    contractaddress str,
+    tokenid int,
+    tokenuri int
+);

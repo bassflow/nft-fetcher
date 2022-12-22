@@ -33,6 +33,12 @@ def get_erc20_transactions(address: str):
     return response.json()["result"]
 
 
+def get_erc1155_transactions(addres: str):
+    url = const.ERC1155TXNURL + addresses
+    response = requests.request("GET", url)
+    return response.json()["result"]
+
+
 def dump_erc721_txn():
     """
     This function uses the get_erc721_transactions function to call the data from Snowtrace

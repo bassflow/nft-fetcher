@@ -24,9 +24,9 @@ root = tk.Tk()
 iconlogo = tk.PhotoImage(file=const.ICON_LOGO)
 
 root.geometry(const.RESOLUTION)  # Resolution
-root.title(__application__)  # Title Name
-root.iconphoto(False, iconlogo)  # Title Icon
-root.configure(bg=const.ACC_COLOR)
+root.title(__application__)  # Title Name (Windows window)
+root.iconphoto(False, iconlogo)  # Title Icon (Windows window)
+root.configure(bg=const.ACC_COLOR)  # Background Color
 
 label = tk.Label(root, text="Test", font=(const.FONT, const.FONT_SIZE1), bg=const.ACC_COLOR)
 label.pack(padx=20, pady=20)

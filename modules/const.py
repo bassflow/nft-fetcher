@@ -13,6 +13,7 @@ ERC721TXNURL = (
     "https://api.snowtrace.io/api?module=account&action=tokennfttx&address="  # API Link for ERC721 Transactions
 )
 ERC20TXNURL = "https://api.snowtrace.io/api?module=account&action=tokentx&address="  # API Link for ERC20 Transactions
+ERC1155TXNURL = "https://api.snowtrace.io/api?module=account&action=tokentxns-nft1155&addres="
 ADDRESSURL = "https://snowtrace.io/address/"  # Snowtrace addres link for contracts and wallets
 ABIURL = "https://api.snowtrace.io/api?module=contract&action=getabi&address="  # API Link for Contract ABI
 RPC_URL = "https://api.avax.network/ext/bc/C/rpc"  # RPC URL

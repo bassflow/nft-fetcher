@@ -21,11 +21,24 @@ w3 = web3.Web3(web3.Web3.HTTPProvider(const.RPC_URL))
 w3.middleware_onion.inject(geth_poa_middleware, layer=0)
 
 
-contract = w3.eth.contract(address=w3.toChecksumAddress(CONTRACT), abi=const.getABI(CONTRACT))
-
-token_uri = contract.functions.tokenURI(ID).call()
-print(token_uri)
-
-
 def fetch_token_uri(contract, id):
-    pass
+    contract = w3.eth.contract(address=w3.toChecksumAddress(CONTRACT), abi=const.getABI(CONTRACT))
+
+    token_uri = contract.functions.tokenURI(ID).call()
+    print(token_uri)
+    # Fetch info from database
+
+    # Insert into database
+    db.record(
+        """INSERT OR IGNORE INTO nftholding (
+            contractaddres,
+            tokenid,
+            tokenuri
+            ) 
+            VALUES (?,?,?)""",
+        (contract_addres),
+        (tokenid),
+        (token_uri),
+    )
+
+    db.commit()
